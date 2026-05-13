@@ -1,15 +1,22 @@
-\documentclass[journal,onecolumn]{IEEEtran}
+\documentclass[12pt,draftclsnofoot,onecolumn]{IEEEtran}
 
+\usepackage[letterpaper,margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
 \usepackage{cite}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
 
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{1em}
+\renewcommand{\arraystretch}{1.15}
+
 \title{Empirical Study on the Characteristics and Evolution of AI Usage in GitHub Repositories: Evidence from Code Comments}
-\author{Abdullah Al Mujahid\\May 13, 2026}
+\author{Abdullah Al Mujahid\\\normalsize May 13, 2026}
 
 \begin{document}
 
@@ -75,8 +82,8 @@ For RQ1, the results show that AI is primarily used for code implementation. In 
 \caption{Developer-Level Task Distribution of AI Usage}
 \label{tab:task_distribution}
 \centering
-\scriptsize
-\begin{tabular}{p{0.56\columnwidth}rr}
+\small
+\begin{tabularx}{0.86\linewidth}{Xrr}
 \toprule
 \textbf{Task Type} & \textbf{Count} & \textbf{Percent} \\
 \midrule
@@ -88,7 +95,7 @@ Bug Identification and Fixing & 388 & 1.54\% \\
 \midrule
 Total & 25,193 & 100.00\% \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 The AI contribution analysis shows a similar pattern. Implementation is the dominant contribution type, appearing in 16,137 cases, or 82.13\% of the contribution-specific dataset, as shown in Table~\ref{tab:contribution_distribution}. Knowledge and concept support appears in 2,798 cases, or 14.76\%, showing that developers also use AI as an advisor for design decisions, algorithm selection, secure practices, API behavior, syntax, performance issues, and debugging strategies. Artifact generation appears in 714 cases, or 3.63\%, and includes supporting materials such as lists, configuration-like content, documentation text, and test-related artifacts.
@@ -97,8 +104,8 @@ The AI contribution analysis shows a similar pattern. Implementation is the domi
 \caption{Distribution of AI Contribution Types}
 \label{tab:contribution_distribution}
 \centering
-\scriptsize
-\begin{tabular}{p{0.56\columnwidth}rr}
+\small
+\begin{tabularx}{0.86\linewidth}{Xrr}
 \toprule
 \textbf{Contribution Type} & \textbf{Count} & \textbf{Percent} \\
 \midrule
@@ -108,7 +115,7 @@ Artifact Generation & 714 & 3.63\% \\
 \midrule
 Total & 19,649 & 100.00\% \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 These findings indicate that AI is not limited to a passive recommendation role. In many cases, AI acts as a direct contributor by producing code that developers incorporate into repositories. At the same time, the presence of knowledge and concept support shows that developers also use AI for reasoning and exploration. AI-assisted development therefore includes both execution-oriented and cognition-oriented support.
@@ -121,8 +128,8 @@ For RQ2, first-change commits show that AI-assisted code often undergoes substan
 \caption{Modification Activities in First-Change Commit Messages}
 \label{tab:first_change}
 \centering
-\scriptsize
-\begin{tabular}{p{0.74\columnwidth}r}
+\small
+\begin{tabularx}{0.86\linewidth}{Xr}
 \toprule
 \textbf{Modification Intent} & \textbf{Count} \\
 \midrule
@@ -135,7 +142,7 @@ Testing and Evaluation & 432 \\
 Data, Schema, and Pipeline Processing & 128 \\
 Logging and Monitoring & 72 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 Other post-integration categories include configuration, dependency, and environment management; documentation; testing and evaluation; data, schema, and pipeline processing; and logging and monitoring. Together, these results show that AI-assisted code is rarely a finished artifact at the moment of introduction. It is usually integrated into the normal software maintenance cycle, where developers extend, refactor, test, document, and fix it.
@@ -150,8 +157,8 @@ The longitudinal analysis reveals an important shift in AI usage behavior. Code 
 \caption{Longitudinal Statistics of AI Usage}
 \label{tab:longitudinal}
 \centering
-\scriptsize
-\begin{tabular}{p{0.36\textwidth}rrrrr}
+\small
+\begin{tabularx}{\linewidth}{Xrrrrr}
 \toprule
 \textbf{Category} & \textbf{$\mu$} & \textbf{$\sigma$} & \textbf{$\rho_1$} & \textbf{$\beta$} & \textbf{$p$} \\
 \midrule
@@ -164,7 +171,7 @@ Implementation & 0.797 & 0.064 & 0.822 & -0.00324 & .002 \\
 Knowledge Support & 0.150 & 0.050 & 0.888 & 0.00286 & $<$.001 \\
 Artifact Generation & 0.048 & 0.023 & 0.560 & 0.00052 & .162 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 At the contribution level, implementation remains the most common form of AI support, but it also decreases significantly over time. Knowledge and concept support increases significantly, suggesting that developers are gradually using AI more as a reasoning partner and less exclusively as a direct code generator. Artifact generation remains stable and secondary.
